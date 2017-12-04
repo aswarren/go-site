@@ -693,6 +693,10 @@
       example_url: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&Submit=Go&id=AA816246
 - database: ENA
   name: European Nucleotide Archive
+  synonyms:
+    - embl_tsa
+    - emblwgs
+    - embl_con
   description: ENA is made up of a number of distinct databases that includes EMBL-Bank, the newly established Sequence Read Archive (SRA) and the Trace Archive. International nucleotide sequence database collaboration, comprising ENA-EBI nucleotide sequence data library (EMBL-Bank), DNA DataBank of Japan (DDBJ), and NCBI GenBank
   generic_urls:
     - http://www.ebi.ac.uk/ena/
@@ -804,6 +808,16 @@
       url_syntax: http://www.ensemblgenomes.org/id/[example_id]
       example_id: EnsemblProtists:PFL2550w
       example_url: http://www.ensemblgenomes.org/id/PFL2550w
+- database: EnsemblBacteria
+  name: Ensembl Bacteria, the Ensembl database for accessing genome-scale data from bacteria.
+  generic_urls:
+    - http://bacteria.ensembl.org/index.html
+  entity_types:
+    - type_name: gene
+      type_id: SO:0000704
+      url_syntax: http://bacteria.ensembl.org/Salmonella_enterica_subsp_enterica_serovar_typhi_str_ct18/Gene/Summary?g=[example_id]
+      example_id: CAD01290
+      example_url: http://bacteria.ensembl.org/Salmonella_enterica_subsp_enterica_serovar_typhi_str_ct18/Gene/Summary?g=CAD01290
 - database: ENZYME
   name: Swiss Institute of Bioinformatics enzyme database
   generic_urls:
@@ -1481,6 +1495,7 @@
   name: TIGRFAMs HMM collection at the J. Craig Venter Institute
   synonyms:
     - TIGR_TIGRFAMS
+    - TIGRFAMs
   generic_urls:
     - http://search.jcvi.org/
   entity_types:
@@ -2037,13 +2052,35 @@
   name: PathoSystems Resource Integration Center
   description: PathoSystems Resource Integration Center at the Virginia Bioinformatics Institute
   generic_urls:
-    - http://patric.vbi.vt.edu
+    - https://www.patricbrc.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       url_syntax: http://patric.vbi.vt.edu/gene/overview.php?fid=[example_id]
       example_id: PATRIC:cds.000002.436951
       example_url: http://patric.vbi.vt.edu/gene/overview.php?fid=cds.000002.436951
+- database: VectorBase
+  name: VectorBase
+  description: Vectorbase Bioinformatics Resource Center NIAID
+  generic_urls:
+    - https://www.vectorbase.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://www.vectorbase.org/Aedes_aegypti/Gene/Summary?g=[example_id]
+      example_id: AAEL003237
+      example_url: https://www.vectorbase.org/Aedes_aegypti/Gene/Summary?g=AAEL003237
+- database: WBParasite
+  name: WormBase ParaSite
+  description: WormBase ParaSite
+  generic_urls:
+    - https://parasite.wormbase.org
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://parasite.wormbase.org/Trichinella_murrelli_prjna257433/Gene/Summary?g=[example_id]
+      example_id: T05_10764
+      example_url: https://parasite.wormbase.org/Trichinella_murrelli_prjna257433/Gene/Summary?g=T05_10764
 - database: PDB
   name: Protein Data Bank
   generic_urls:
@@ -2774,6 +2811,8 @@
       example_id: SUBTILISTG:accC
 - database: SUPERFAMILY
   name: SUPERFAMILY protein annotation database
+  synonyms:
+    - SUPFAM
   description: A database of structural and functional protein annotations for completely sequenced genomes
   generic_urls:
     - http://supfam.cs.bris.ac.uk/SUPERFAMILY/index.html
@@ -2795,6 +2834,9 @@
       example_url: http://ca.expasy.org/cgi-bin/sprot-search-de?S=1&amp;T=1&amp;SEARCH=12345
 - database: Swiss-Prot
   name: Swiss-Prot protein database.
+  synonyms:
+    - UniProtKB/Swiss-Prot
+    - uniprotkb/swiss-prot protein isoforms
   generic_urls:
     - http://ca.expasy.org/sprot/
   entity_types:
@@ -2915,6 +2957,7 @@
     - SPTREMBL
     - TREMBL
     - TrEMBL
+    - UniProtKB/TrEMBL
   generic_urls:
     - http://www.ebi.ac.uk/swissprot/
   entity_types:
@@ -3267,3 +3310,69 @@
       url_syntax: http://purl.obolibrary.org/obo/plana/references/[example_id]
       example_id: "0000001"
       example_url: http://purl.obolibrary.org/obo/plana/references/0000001
+- database: JPO
+  name: Japanese Patent Office
+  generic_urls:
+    - https://www.jpo.go.jp/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: \d{7}
+      url_syntax: https://www.jpo.go.jp/
+      example_id: DL652598
+      example_url: https://www.jpo.go.jp/
+- database: EPO
+  name: European Patent Office
+  generic_urls:
+    - https://www.epo.org
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: \d{7}
+      url_syntax: https://www.epo.org
+      example_id: JA363394
+      example_url: https://www.epo.org
+- database: USPTO
+  name: United States Patent and Trade Office
+  generic_urls:
+    - https://www.epo.org
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: \d{7}
+      url_syntax: https://www.uspto.gov/
+      example_id: ADC23549
+      example_url: https://www.uspto.gov/
+- database: KIPO
+  name: Korean Intellectual Property Office
+  generic_urls:
+    - http://www.kipo.go.kr/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: \d{7}
+      url_syntax: http://www.kipo.go.kr/
+      example_id: DI743969
+      example_url: http://www.kipo.go.kr/
+- database: TROME
+  name: Trome DB
+  generic_urls:
+    - https://www.ebi.ac.uk/training/online/glossary/trome-database
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: \d{7}
+      url_syntax: https://www.ebi.ac.uk/training/online/glossary/trome-databasei
+      example_id: NC_000006_410_0
+      example_url: https://www.ebi.ac.uk/training/online/glossary/trome-database
+- database: PRF
+  name: Protein Research Foundation (PRF)
+  generic_urls:
+    - http://www.prf.or.jp/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: \d{7}
+      url_syntax: http://www.prf.or.jp/
+      example_id: 2402222A
+      example_url: http://www.prf.or.jp/
